@@ -11,7 +11,11 @@
     Entry Point :$0xfffc  
     Language    :MOS6502 Machine Language  
  
+ ### ■ コンパイル
  
+   コンパイルには、ソースファイルのディレクトリで以下のコマンドを実行してください。  
+'''gcc main.c -lncurses'''  
+
  ### ■ 起動方法
  
    1. ROMイメージファイルを、実行ファイルと同じディレクトリに配置
