@@ -6,7 +6,7 @@
  ### ■ ROMイメージファイル
  
    実行には、APPLE2のROMイメージファイルが別途必要です。  
-　　[ ROMイメージファイル要件 ]  
+[ ROMイメージファイル要件 ]  
     Size    　　：12KB  
     Entry Point :$0xfffc  
     Language    :MOS6502 Machine Language  
