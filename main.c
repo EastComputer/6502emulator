@@ -67,6 +67,9 @@
 #define DISPLAY_MEM_WIDTH 40
 
 int memoryDestination = 0;
+int displayMemoryAddress = 0;
+int displayAreaAddress = 0;
+int displayHCount = 0;
 
 //testcode
 int promptLIne = 0;
@@ -650,76 +653,148 @@ t_decoded decode( unsigned char opcode ){
 int isDisplayMemoryArea( unsigned int address ){
     int result = false;
     
-    if(( address >= DISPLAY_MEM0 ) && ( address <= (DISPLAY_MEM0 + DISPLAY_MEM_WIDTH))){
+    if(( address >= DISPLAY_MEM0 ) && ( address < (DISPLAY_MEM0 + DISPLAY_MEM_WIDTH))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM0;
+        displayHCount = 0;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM1 ) && ( address <= ( DISPLAY_MEM1 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM1 ) && ( address < ( DISPLAY_MEM1 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM1;
+        displayHCount = 1;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM2 ) && ( address <= ( DISPLAY_MEM2 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM2 ) && ( address < ( DISPLAY_MEM2 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM2;
+        displayHCount = 2;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM3 ) && ( address <= ( DISPLAY_MEM3 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM3 ) && ( address < ( DISPLAY_MEM3 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM3;
+        displayHCount = 3;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM4 ) && ( address <= ( DISPLAY_MEM4 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM4 ) && ( address < ( DISPLAY_MEM4 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM4;
+        displayHCount = 4;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM5 ) && ( address <= ( DISPLAY_MEM5 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM5 ) && ( address < ( DISPLAY_MEM5 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM5;
+        displayHCount = 5;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM6 ) && ( address <= ( DISPLAY_MEM6 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM6 ) && ( address < ( DISPLAY_MEM6 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM6;
+        displayHCount = 6;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM7 ) && ( address <= ( DISPLAY_MEM7 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM7 ) && ( address < ( DISPLAY_MEM7 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM7;
+        displayHCount = 7;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM8 ) && ( address <= ( DISPLAY_MEM8 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM8 ) && ( address < ( DISPLAY_MEM8 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM8;
+        displayHCount = 8;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM9 ) && ( address <= ( DISPLAY_MEM9 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM9 ) && ( address < ( DISPLAY_MEM9 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM9;
+        displayHCount = 9;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM10 ) && ( address <= ( DISPLAY_MEM10 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM10 ) && ( address < ( DISPLAY_MEM10 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM10;
+        displayHCount = 10;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM11 ) && ( address <= ( DISPLAY_MEM11 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM11 ) && ( address < ( DISPLAY_MEM11 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM11;
+        displayHCount = 11;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM12 ) && ( address <= ( DISPLAY_MEM12 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM12 ) && ( address < ( DISPLAY_MEM12 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM12;
+        displayHCount = 12;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM13 ) && ( address <= ( DISPLAY_MEM13 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM13 ) && ( address < ( DISPLAY_MEM13 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM13;
+        displayHCount = 13;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM14 ) && ( address <= ( DISPLAY_MEM14 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM14 ) && ( address < ( DISPLAY_MEM14 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM14;
+        displayHCount = 14;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM15 ) && ( address <= ( DISPLAY_MEM15 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM15 ) && ( address < ( DISPLAY_MEM15 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM15;
+        displayHCount = 15;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM16 ) && ( address <= ( DISPLAY_MEM16 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM16 ) && ( address < ( DISPLAY_MEM16 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM16;
+        displayHCount = 16;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM17 ) && ( address <= ( DISPLAY_MEM17 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM17 ) && ( address < ( DISPLAY_MEM17 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM17;
+        displayHCount = 17;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM18 ) && ( address <= ( DISPLAY_MEM18 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM18 ) && ( address < ( DISPLAY_MEM18 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM18;
+        displayHCount = 18;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM19 ) && ( address <= ( DISPLAY_MEM19 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM19 ) && ( address < ( DISPLAY_MEM19 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM19;
+        displayHCount = 19;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM20 ) && ( address <= ( DISPLAY_MEM20 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM20 ) && ( address < ( DISPLAY_MEM20 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM20;
+        displayHCount = 20;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM21 ) && ( address <= ( DISPLAY_MEM21 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM21 ) && ( address < ( DISPLAY_MEM21 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM21;
+        displayHCount = 21;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM22 ) && ( address <= ( DISPLAY_MEM22 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM22 ) && ( address < ( DISPLAY_MEM22 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM22;
+        displayHCount = 22;
         result = true;
     }
-    else if(( address >= DISPLAY_MEM23 ) && ( address <= ( DISPLAY_MEM23 + DISPLAY_MEM_WIDTH ))){
+    else if(( address >= DISPLAY_MEM23 ) && ( address < ( DISPLAY_MEM23 + DISPLAY_MEM_WIDTH ))){
+        displayMemoryAddress = address;
+        displayAreaAddress = address - DISPLAY_MEM23;
+        displayHCount = 23;
         result = true;
     }
     
@@ -1606,6 +1681,7 @@ int initMemory( unsigned char *memory ){
     }
     else{
         ready = false;
+        fclose(fp);
     }
 
     return ready;
@@ -1654,41 +1730,45 @@ void printLine( int lineNum, unsigned char *memory ){
 }
 
 
-
-
-
 void monitor( unsigned char *memory ){
     int lineNum = 0;
+    char printChar[2];
+
     if( memoryDestination == display ){
         lineCount = 0;
         charLIneNum = 0;
         
-        clear();  
+        if( memory[displayMemoryAddress] != '\0'){
+            printChar[0] = convertCharCode( memory[displayMemoryAddress]);
+            printChar[1] = '\0';
+            mvprintw(displayHCount, displayAreaAddress, printChar);
+        }
+        //clear();  
         
-        printLine( lineNum++, &memory[0x400]);
-        printLine( lineNum++, &memory[0x480]);
-        printLine( lineNum++, &memory[0x500]);
-        printLine( lineNum++, &memory[0x580]);
-        printLine( lineNum++, &memory[0x600]);
-        printLine( lineNum++, &memory[0x680]);
-        printLine( lineNum++, &memory[0x700]);
-        printLine( lineNum++, &memory[0x780]);
-        printLine( lineNum++, &memory[0x428]);
-        printLine( lineNum++, &memory[0x4a8]);
-        printLine( lineNum++, &memory[0x528]);
-        printLine( lineNum++, &memory[0x5a8]);
-        printLine( lineNum++, &memory[0x628]);
-        printLine( lineNum++, &memory[0x6a8]);
-        printLine( lineNum++, &memory[0x728]);
-        printLine( lineNum++, &memory[0x7a8]);
-        printLine( lineNum++, &memory[0x450]);
-        printLine( lineNum++, &memory[0x4d0]);
-        printLine( lineNum++, &memory[0x550]);
-        printLine( lineNum++, &memory[0x5d0]);
-        printLine( lineNum++, &memory[0x650]);
-        printLine( lineNum++, &memory[0x6d0]);
-        printLine( lineNum++, &memory[0x750]);
-        printLine( lineNum++, &memory[0x7d0]);
+        //printLine( lineNum++, &memory[0x400]);
+        //printLine( lineNum++, &memory[0x480]);
+        //printLine( lineNum++, &memory[0x500]);
+        //printLine( lineNum++, &memory[0x580]);
+        //printLine( lineNum++, &memory[0x600]);
+        //printLine( lineNum++, &memory[0x680]);
+        //printLine( lineNum++, &memory[0x700]);
+        //printLine( lineNum++, &memory[0x780]);
+        //printLine( lineNum++, &memory[0x428]);
+        //printLine( lineNum++, &memory[0x4a8]);
+        //printLine( lineNum++, &memory[0x528]);
+        //printLine( lineNum++, &memory[0x5a8]);
+        //printLine( lineNum++, &memory[0x628]);
+        //printLine( lineNum++, &memory[0x6a8]);
+        //printLine( lineNum++, &memory[0x728]);
+        //printLine( lineNum++, &memory[0x7a8]);
+        //printLine( lineNum++, &memory[0x450]);
+        //printLine( lineNum++, &memory[0x4d0]);
+        //printLine( lineNum++, &memory[0x550]);
+        //printLine( lineNum++, &memory[0x5d0]);
+        //printLine( lineNum++, &memory[0x650]);
+        //printLine( lineNum++, &memory[0x6d0]);
+        //printLine( lineNum++, &memory[0x750]);
+        //printLine( lineNum++, &memory[0x7d0]);
         
         refresh();
     }    
@@ -1734,8 +1814,8 @@ void drawTitle1( void ){
     mvprintw(line++, 0, "        6502 Emulator          Special Controls                            ");
     mvprintw(line++, 0, "        -------------          --------------------------                  ");
     mvprintw(line++, 0, "                               Reset    : Please type 'r'                  ");
-    mvprintw(line++, 0, "        Release 1.1            CTLE + B : Please type 'b'                  ");
-    mvprintw(line++, 0, "        2020.08.07                                                         ");
+    mvprintw(line++, 0, "        Release 1.2            CTLE + B : Please type 'b'                  ");
+    mvprintw(line++, 0, "        2020.08.09                                                         ");
     mvprintw(line++, 0, "                                                                           ");
     mvprintw(line++, 0, "        east computer          Boot program                                ");
     mvprintw(line++, 0, "                               --------------------------                  ");
@@ -1766,8 +1846,8 @@ void drawTitle2( void ){
     mvprintw(line++, 0, "        6502 Emulator          Special controls                            ");
     mvprintw(line++, 0, "        -------------          --------------------------                  ");
     mvprintw(line++, 0, "                               Reset    : Please type 'r'                  ");
-    mvprintw(line++, 0, "        Release 1.1            CTLE + B : Please type 'b'                  ");
-    mvprintw(line++, 0, "        2020.08.07                                                         ");
+    mvprintw(line++, 0, "        Release 1.2            CTLE + B : Please type 'b'                  ");
+    mvprintw(line++, 0, "        2020.08.09                                                         ");
     mvprintw(line++, 0, "                                                                           ");
     mvprintw(line++, 0, "        east computer          Boot program                                ");
     mvprintw(line++, 0, "                               --------------------------                  ");
@@ -1806,6 +1886,7 @@ void title ( unsigned char *memory ){
         }
         else{
             drawTitle1();
+            while(true){};
         }
 }
 
@@ -1834,6 +1915,7 @@ int main(int argc, const char * argv[]) {
     initMemory(memory);
     initRegist( &regist, memory );
         
+    clear();
     while(!kill){
         //fetch
         getInst( &regist, memory, &inst );
